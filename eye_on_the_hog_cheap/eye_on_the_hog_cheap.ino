@@ -70,7 +70,6 @@ void loop() {
         dtid = millis() - tid;
         long kapasativ_verdi = cap.capacitiveSensor(30); //Finner verdien til vår kapasative sensor
         if (kapasativ_verdi > grense_kapasativ){
-          Serial.println("fuck2");
           digitalWrite(LedG, LOW);
           digitalWrite(LedR, HIGH); //Setter på vår røde LED for det som er igjen av 1min
           delay(10000 - dtid);
