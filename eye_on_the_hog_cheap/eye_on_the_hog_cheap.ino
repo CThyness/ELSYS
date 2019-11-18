@@ -52,12 +52,10 @@ void loop() {
     delay(0); //Hvis bakken ikke er blå måles det på nytt om 0 millisekunder
   }
   else if (maalinger_gront == 0){  //Første gang det måles grønt så noteres det ned og så tar arduinoen en pause i 2 sek
-    Serial.println("merkelig");
     maalinger_gront = 1;
     delay(2000);
   }
   else if (kapasativ_verdi > grense_kapasativ){  //Hvis du holder for lenge på håndtaket
-    Serial.println("fuck");
     digitalWrite(LedR, HIGH); //Setter på vår røde LED for 1min
     delay(10000);
     digitalWrite(LedR, LOW);
@@ -66,7 +64,6 @@ void loop() {
   else {  //Hvis du slipper kulen i tide
     maalinger_gront = 0;
     dtid = 0;
-    Serial.println("Ja, innteresant");
     tid = millis();
     digitalWrite(LedG, HIGH);
       while (dtid < 10000){
